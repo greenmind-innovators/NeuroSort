@@ -722,6 +722,7 @@ body {
     color: white;
     background: #28a745;
 }
+
 .recyclable-status {
     display: inline-block;
     padding: 8px 16px;
@@ -730,6 +731,16 @@ body {
     font-size: 12px;
     color: white;
     background: #28a745;
+}
+
+.compost-status {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    background: #ecbf42;
 }
 
 .next-button {
