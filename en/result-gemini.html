@@ -183,7 +183,11 @@
          // Set up labels
         detectionLabel.textContent = trashType;
         binColor.textContent = binType[trashType.toLowerCase()] || 'Unknown Bin';
-        binColor.style.backgroundColor = getDetectionColor(trashType);       
+        binColor.style.backgroundColor = getDetectionColor(trashType);   
+        
+        if(trashType === 'organic') {
+             document.querySelector('.recyclable-status').textContent = 'Compost';
+        }
 
     }
 
