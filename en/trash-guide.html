@@ -109,7 +109,7 @@
             color: "#232323",
             image: "../Images/trash-guide.png"
         },
-        compose: {
+        organic: {
             type: "Organic",
             status: "Compost",
             desc: "Organic waste is biodegradable material from food, plants, or natural sources that decomposes and can be reused as compost or bioenergy.",
@@ -133,18 +133,7 @@
             document.querySelector("h2 + p").textContent = item.instructions;
             document.getElementById("binLabel").textContent = item.bin;
             document.querySelector(".tag").style.backgroundColor = item.color;
-        } else {
-            document.querySelector(".item-img img").src = item.image;
-            document.querySelector("h1").textContent = item.type;
-            document.querySelector(".status-text").textContent = item.status;
-            document.querySelector("p").textContent = item.desc;
-            document.querySelector("h2 + p").textContent = item.instructions;
-            document.getElementById("binLabel").textContent = item.bin;
-            document.querySelector(".tag").style.backgroundColor = item.color; 
-        }
-
-
-
+        } 
     });
 
 </script>
