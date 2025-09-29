@@ -189,9 +189,12 @@
         
         if(trashType.toLowerCase() === 'organic') {
              document.querySelector('.recyclable-status').textContent = 'Compost';
-        } else { 
+        } else if(trashType.toLowerCase() === 'trash') { 
              document.querySelector('.recyclable-status').textContent = 'Non-Recyclable';
-        } 
+        } else {
+            document.querySelector('.recyclable-status').textContent = 'Recyclable';
+
+        }
 
 
 
