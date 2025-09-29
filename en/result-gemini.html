@@ -81,7 +81,7 @@
         'metal': '#846958',
         'glass': '#846958',
         'organic':'#28a745',
-        'trash':'#808080'
+        'trash': '#808080'
     };
 
     const binType = {
@@ -189,9 +189,7 @@
         
         if(trashType.toLowerCase() === 'organic') {
              document.querySelector('.recyclable-status').textContent = 'Compost';
-        } 
-
-        if(trashType.toLowerCase() === 'trash') {
+        } else { 
              document.querySelector('.recyclable-status').textContent = 'Non-Recyclable';
         } 
 
