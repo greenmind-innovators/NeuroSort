@@ -250,7 +250,8 @@ async function predict() {
         formData.append('image', file);
         
         // Add a text prompt for the Gemini model
-        const geminiPrompt = "Analyze this image. Classify it into one of these class label: 'Recyclable (Plastic / Paper / Metal / Glass)',  'Compost (Organic)', or 'Non-Recyclable (Trash)'. Also, provide a brief, friendly disposal instruction.";
+        // const geminiPrompt = "Analyze this image. Classify it into one of these class label: 'Recyclable (Plastic / Paper / Metal / Glass)',  'Compost (Organic)', or 'Non-Recyclable (Trash)'. Also, provide a brief, friendly disposal instruction.";
+        const geminiPrompt = "Analyze this image. Classify it into one of these class label: 'Recyclable (Plastic / Paper / Metal / Glass/ Multiple)',  'Compost (Organic)', or 'Non-Recyclable (Trash)'. Also, provide a brief, friendly disposal instruction using class label: 'Disposal Instruction'. If it is 'Recyclable (Multiple)' provide brief separation instruction as class label: 'Separation Instruction'. Do not include asterik between class label.";
         formData.append('prompt', geminiPrompt);
 
 
