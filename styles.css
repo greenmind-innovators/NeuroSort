@@ -447,22 +447,13 @@ body {
 /* -----------------------------------End of styling for trash-guide.html----------------------------------- */
 
 /* -----------------------------------Start of styling for trash-guide-multiple.html----------------------------------- */
-.gotoaiscanner-btn {
-    background: #7cb414;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+#gotoaiscanner {
+  padding: 6px 12px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.gotoaiscanner-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-}
 /* -----------------------------------End of styling for trash-guide-multiple.html----------------------------------- */
 
 /* -----------------------------------Start of styling for sorting-menu.html----------------------------------- */
