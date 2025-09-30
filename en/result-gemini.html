@@ -153,34 +153,48 @@
 
         //alert(`${predictionResult}`);
 
-        // 1. Define the start and end markers for the desired phrase.
-        const startMarker = '**Class Label:** ';
-        const endMarker = '**Disposal Instruction:**';
+alert(`Go to Next Page`);
+        const serverResponseData = localStorage.getItem("serverResponseString");  
+        const predictionObject = JSON.parse(serverResponseData);
+        const predictionResult = predictionObject.prediction;   
 
+
+         // 1. Define the start and end markers for the desired phrase.
+        const firstMarker = 'Class Label: ';
+        const secondMarker = 'Disposal Instruction: ';
+        const thirdMarker = 'Separation Instruction: ';
+
+        const firstMarkerstartindex = predictionResult.indexOf(firstMarker);
+        const secondMarkerstartindex = predictionResult.indexOf(secondMarker);
+        const thirdMarkerstartindex = predictionResult.indexOf(thirdMarker);
 
         // 2. Find the starting index of the classification value.
         // We search for the start marker and add its length to get the index *after* the colon and space.
-        const startIndex = predictionResult.indexOf(startMarker) + startMarker.length;
-        //alert(`${startIndex}`);
+        const startIndex = firstMarkerstartindex + firstMarker.length;
+        alert(`${startIndex}`);
 
 
         // 3. Find the ending index of the classification value (the beginning of the next section).
-        const endIndex = predictionResult.indexOf(endMarker);
-        //alert(`${endIndex}`);
+        /* const endIndex = predictionResult.indexOf(secondMarker); */
+        alert(`${secondMarkerstartindex}`); 
+        alert(`${thirdMarkerstartindex}`); 
 
 
         // 4. Use substring() to extract the text between the start and end indices.
         let trashType = 'Not found';
 
         
-        // Check to ensure both markers were found before extracting
-        if (startIndex !== -1 && endIndex !== -1) {
-            trashType = predictionResult.substring(startIndex, endIndex).trim();   
+         // Check to ensure both markers were found before extracting
+        if (startIndex !== -1 && secondMarkerstartindex !== -1) {
+            trashType = predictionResult.substring(startIndex, secondMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));        
-        } 
+        } else {
+            trashType = predictionResult.substring(startIndex, thirdMarkerstartindex).trim();   
+            trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));   
+        }
 
         
-        alert(`${trashType}`);
+        alert(`${trashType.toLowerCase()}`);
 
          // Set up labels
         detectionLabel.textContent = trashType;
