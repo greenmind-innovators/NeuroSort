@@ -447,11 +447,19 @@ body {
 /* -----------------------------------End of styling for trash-guide.html----------------------------------- */
 
 /* -----------------------------------Start of styling for trash-guide-multiple.html----------------------------------- */
-#gotoaiscanner {
-  padding: 6px 12px;
-  border: 1px solid #999;
-  border-radius: 6px;
-  cursor: pointer;
+
+#gotoaiscannerBtn {
+    display: none;
+    background: #7cb414;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
 }
 
 /* -----------------------------------End of styling for trash-guide-multiple.html----------------------------------- */
