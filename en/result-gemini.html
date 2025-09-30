@@ -266,8 +266,10 @@
         
         alert(`${trashType.toLowerCase()}`);
 
+         alert(`predictionResult: ${predictionResult}`);
+
         let data1 = '';
-        data1 = predictionResult.substring(secondMarkerstartindex, thirdMarkerstartindex).trim();   
+        data1 = predictionResult.substring(secondMarkerstartindex + secondMarker.length, thirdMarkerstartindex).trim();   
         alert(`data1: ${data1}`);
 
         let data2 = '';
