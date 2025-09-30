@@ -138,7 +138,8 @@
             document.querySelector("h1").textContent = item.type;
             document.querySelector(".status-text").textContent = item.status;
             document.querySelector("p").textContent = item.desc;
-            document.querySelector("h2 + p").textContent = item.instructions;
+            // document.querySelector("h2 + p").textContent = item.instructions;
+            document.querySelector("h2 + p").textContent = instructions;
             document.getElementById("binLabel").textContent = item.bin;
             document.querySelector(".tag").style.backgroundColor = item.color;
         } else {
