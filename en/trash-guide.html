@@ -133,7 +133,7 @@
         const desc = params.get("data1");
         const instructions = params.get("data2");
 
-        if (type !== 'multiple' && items[type]) {
+        if (type !== 'multiple' && type !== 'trash' && type !== 'organic' && items[type]) {
             const item = items[type];
             document.querySelector(".item-img img").src = item.image;
             document.querySelector("h1").textContent = item.type;
