@@ -129,16 +129,15 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search);
-        const type = params.get("type");
-        const desc = params.get("data1");
-        const instructions = params.get("data2");
+        const type = params.get("type");        
+        const instructions = params.get("data");
 
         if (type !== 'multiple' && type !== 'trash' && type !== 'organic' && items[type]) {
             const item = items[type];
             document.querySelector(".item-img img").src = item.image;
             document.querySelector("h1").textContent = item.type;
             document.querySelector(".status-text").textContent = item.status;
-            document.querySelector("p").textContent = item.desc;
+            document.querySelector("p").textContent = "";
             document.querySelector("h2 + p").textContent = item.instructions;
             document.getElementById("binLabel").textContent = item.bin;
             document.querySelector(".tag").style.backgroundColor = item.color;

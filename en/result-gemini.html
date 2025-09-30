@@ -266,7 +266,7 @@
         } else if (startIndex !== -1 && secondMarkerstartindex === -1 && thirdMarkerstartindex !== -1) {
             trashType = predictionResult.substring(startIndex, thirdMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));   
-            data2 = predictionResult.substring(thirdMarkerstartindex + thirdMarker.length, predictionResult.length - 1).trim();   
+            data2 = predictionResult.substring(thirdMarkerstartindex + thirdMarker.length, predictionResult.length).trim();   
         } else {
             trashType = predictionResult.substring(startIndex, secondMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));              
@@ -277,13 +277,15 @@
         
         alert(`${trashType.toLowerCase()}`);
         alert(`data1: ${data1}`);
-        alert(`data2: ${data2}`);       
+        alert(`data2: ${data2}`);     
+        
+        const data = data1 + " " + data2;
         
 
         if (trashType.toLowerCase() === "glass" || trashType.toLowerCase() === "metal") {
             window.location.href = `trash-guide.html?type=metalOrGlass`;
         } else {
-             window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}&data1=${data1}&data2=${data2}`;
+             window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}&data=${data}`;
             //window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}`;
         }
     }
