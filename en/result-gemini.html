@@ -254,27 +254,31 @@
 
         // 4. Use substring() to extract the text between the start and end indices.
         let trashType = 'Not found';
+        let data1 = '';
+        let data2 = '';
 
         
          // Check to ensure both markers were found before extracting
-        if (startIndex !== -1 && secondMarkerstartindex !== -1) {
+        if (startIndex !== -1 && secondMarkerstartindex !== -1 && thirdMarkerstartindex === -1) {
             trashType = predictionResult.substring(startIndex, secondMarkerstartindex).trim();   
-            trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));        
-        } else {
+            trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));              
+            data1 = predictionResult.substring(secondMarkerstartindex + secondMarker.length, predictionResult.length - 1).trim();   
+        } else if (startIndex !== -1 && secondMarkerstartindex === -1 && thirdMarkerstartindex !== -1) {
             trashType = predictionResult.substring(startIndex, thirdMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));   
+            data2 = predictionResult.substring(thirdMarkerstartindex + thirdMarker.length, predictionResult.length - 1).trim();   
+        } else {
+            trashType = predictionResult.substring(startIndex, secondMarkerstartindex).trim();   
+            trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));              
+            data1 = predictionResult.substring(secondMarkerstartindex + secondMarker.length, thirdMarkerstartindex).trim();   
+            data2 = predictionResult.substring(thirdMarkerstartindex + thirdMarker.length, predictionResult.length - 1).trim();   
+
         }
 
         
         alert(`${trashType.toLowerCase()}`);
-
-         alert(`predictionResult: ${predictionResult}`);
-
-        let data1 = '';
-        data1 = predictionResult.substring(secondMarkerstartindex + secondMarker.length, thirdMarkerstartindex).trim();   
         alert(`data1: ${data1}`);
-
-        let data2 = '';
+        alert(`data1: ${data2}`);       
         
 
         if (trashType.toLowerCase() === "glass" || trashType.toLowerCase() === "metal") {
