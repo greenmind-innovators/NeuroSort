@@ -192,7 +192,11 @@
        
 
          // Set up labels
-        detectionLabel.textContent = trashType;
+         if (trashType === 'Multiple') {
+            etectionLabel.textContent = trashType + "Trash Types";
+         } else {
+            detectionLabel.textContent = trashType;
+         }
         binColor.textContent = binType[trashType.toLowerCase()] || 'Unknown Bin';
         binColor.style.backgroundColor = getDetectionColor(trashType);   
         
