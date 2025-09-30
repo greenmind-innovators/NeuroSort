@@ -266,18 +266,18 @@
         
         alert(`${trashType.toLowerCase()}`);
 
-        const data1 = ' ';
+        let data1 = '';
         data1 = predictionResult.substring(secondMarkerstartindex, thirdMarkerstartindex).trim();   
         alert(`data1: ${data1}`);
 
-        const data2 = ' ';
+        let data2 = '';
         
 
         if (trashType.toLowerCase() === "glass" || trashType.toLowerCase() === "metal") {
             window.location.href = `trash-guide.html?type=metalOrGlass`;
         } else {
-            // window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}&data1=${data1}&data2=${data2}`;
-            window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}`;
+             window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}&data1=${data1}&data2=${data2}`;
+            //window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}`;
         }
     }
 
