@@ -262,7 +262,7 @@
         if (startIndex !== -1 && secondMarkerstartindex !== -1 && thirdMarkerstartindex === -1) {
             trashType = predictionResult.substring(startIndex, secondMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));              
-            data1 = predictionResult.substring(secondMarkerstartindex + secondMarker.length, predictionResult.length - 1).trim();   
+            data1 = predictionResult.substring(secondMarkerstartindex + secondMarker.length, predictionResult.length).trim();   
         } else if (startIndex !== -1 && secondMarkerstartindex === -1 && thirdMarkerstartindex !== -1) {
             trashType = predictionResult.substring(startIndex, thirdMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));   
