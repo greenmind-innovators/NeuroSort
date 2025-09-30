@@ -153,11 +153,6 @@
 
         //alert(`${predictionResult}`);
 
-alert(`Go to Next Page`);
-        const serverResponseData = localStorage.getItem("serverResponseString");  
-        const predictionObject = JSON.parse(serverResponseData);
-        const predictionResult = predictionObject.prediction;   
-
 
          // 1. Define the start and end markers for the desired phrase.
         const firstMarker = 'Class Label: ';
@@ -187,14 +182,14 @@ alert(`Go to Next Page`);
          // Check to ensure both markers were found before extracting
         if (startIndex !== -1 && secondMarkerstartindex !== -1) {
             trashType = predictionResult.substring(startIndex, secondMarkerstartindex).trim();   
-            trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));        
+            trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));     
+             alert(`trashType1 = ${trashType.toLowerCase()}`);   
         } else {
             trashType = predictionResult.substring(startIndex, thirdMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));   
-        }
-
-        
-        alert(`${trashType.toLowerCase()}`);
+            alert(`trashType2 = ${trashType.toLowerCase()}`);   
+        }        
+       
 
          // Set up labels
         detectionLabel.textContent = trashType;
