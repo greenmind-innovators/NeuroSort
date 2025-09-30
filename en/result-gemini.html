@@ -266,12 +266,15 @@
         
         alert(`${trashType.toLowerCase()}`);
 
+
+        const data1 = predictionResult.substring(secondMarkerstartindex, thirdMarkerstartindex).trim();   
+        alert(`data1: ${trashType.toLowerCase()}`);
         
 
         if (trashType.toLowerCase() === "glass" || trashType.toLowerCase() === "metal") {
             window.location.href = `trash-guide.html?type=metalOrGlass`;
         } else {
-            window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}`;
+            window.location.href = `trash-guide.html?type=${trashType.toLowerCase()}&data1=${data1}&data2=${data2}`;
         }
     }
 
