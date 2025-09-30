@@ -449,7 +449,7 @@ body {
 /* -----------------------------------Start of styling for trash-guide-multiple.html----------------------------------- */
 
 #gotoaiscannerBtn {
-    display: none;
+    display: inline-block;
     background: #7cb414;
     color: white;
     border: none;
