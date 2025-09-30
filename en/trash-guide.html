@@ -133,7 +133,7 @@
         const desc = params.get("data1");
         const instructions = params.get("data2");
 
-        if (type && items[type]) {
+        if (type !== 'multiple' && items[type]) {
             const item = items[type];
             document.querySelector(".item-img img").src = item.image;
             document.querySelector("h1").textContent = item.type;
@@ -144,13 +144,13 @@
             document.querySelector(".tag").style.backgroundColor = item.color;
         } else {
            const item = items[type];
-            document.querySelector(".item-img img").src = item.image;
-            document.querySelector("h1").textContent = item.type;
-            document.querySelector(".status-text").textContent = item.status;
-            document.querySelector("p").textContent = desc;
-            document.querySelector("h2 + p").textContent = instructions;
-            document.getElementById("binLabel").textContent = item.bin;
-            document.querySelector(".tag").style.backgroundColor = item.color; 
+           document.querySelector(".item-img img").src = item.image;
+           document.querySelector("h1").textContent = item.type;
+           document.querySelector(".status-text").textContent = item.status;
+           document.querySelector("p").textContent = desc;
+           document.querySelector("h2 + p").textContent = instructions;
+           document.getElementById("binLabel").textContent = item.bin;
+           document.querySelector(".tag").style.backgroundColor = item.color; 
         }
     });
 
