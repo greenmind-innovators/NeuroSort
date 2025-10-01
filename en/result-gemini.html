@@ -166,13 +166,13 @@
         // 2. Find the starting index of the classification value.
         // We search for the start marker and add its length to get the index *after* the colon and space.
         const startIndex = firstMarkerstartindex + firstMarker.length;
-        alert(`${startIndex}`);
+        //alert(`${startIndex}`);
 
 
         // 3. Find the ending index of the classification value (the beginning of the next section).
         /* const endIndex = predictionResult.indexOf(secondMarker); */
-        alert(`${secondMarkerstartindex}`); 
-        alert(`${thirdMarkerstartindex}`); 
+        //alert(`${secondMarkerstartindex}`); 
+        //alert(`${thirdMarkerstartindex}`); 
 
 
         // 4. Use substring() to extract the text between the start and end indices.
@@ -183,11 +183,11 @@
         if (startIndex !== -1 && secondMarkerstartindex !== -1) {
             trashType = predictionResult.substring(startIndex, secondMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));     
-             alert(`trashType1 = ${trashType.toLowerCase()}`);   
+             //alert(`trashType1 = ${trashType.toLowerCase()}`);   
         } else {
             trashType = predictionResult.substring(startIndex, thirdMarkerstartindex).trim();   
             trashType = trashType.slice(trashType.indexOf('(') + 1, trashType.lastIndexOf(')'));   
-            alert(`trashType2 = ${trashType.toLowerCase()}`);   
+           //alert(`trashType2 = ${trashType.toLowerCase()}`);   
         }        
        
 
@@ -227,12 +227,12 @@
     function goToNextPage() {
 
 
-        alert(`Go to Next Page`);
+        //alert(`Go to Next Page`);
         const serverResponseData = localStorage.getItem("serverResponseString");  
         const predictionObject = JSON.parse(serverResponseData);
         const predictionResult = predictionObject.prediction;   
 
-        alert(`predictionResult: ${predictionResult}`);
+        //alert(`predictionResult: ${predictionResult}`);
 
 
          // 1. Define the start and end markers for the desired phrase.
@@ -247,13 +247,13 @@
         // 2. Find the starting index of the classification value.
         // We search for the start marker and add its length to get the index *after* the colon and space.
         const startIndex = firstMarkerstartindex + firstMarker.length;
-        alert(`${startIndex}`);
+        //alert(`${startIndex}`);
 
 
         // 3. Find the ending index of the classification value (the beginning of the next section).
         /* const endIndex = predictionResult.indexOf(secondMarker); */
-        alert(`${secondMarkerstartindex}`); 
-        alert(`${thirdMarkerstartindex}`); 
+        //alert(`${secondMarkerstartindex}`); 
+        //alert(`${thirdMarkerstartindex}`); 
 
 
         // 4. Use substring() to extract the text between the start and end indices.
@@ -279,13 +279,13 @@
         }
 
         
-        alert(`${trashType.toLowerCase()}`);
-        alert(`data1: ${data1}`);
-        alert(`data2: ${data2}`);     
+        //alert(`${trashType.toLowerCase()}`);
+        //alert(`data1: ${data1}`);
+        //alert(`data2: ${data2}`);     
         
         const data = data1 + " " + data2;
 
-         alert(`data: ${data}`);    
+        // alert(`data: ${data}`);    
         
 
         if (trashType.toLowerCase() === "glass" || trashType.toLowerCase() === "metal") {
