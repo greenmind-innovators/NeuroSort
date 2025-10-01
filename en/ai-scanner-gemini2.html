@@ -285,6 +285,19 @@ async function predict() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
+        // try to parse JSON
+    let parsed;
+    try {
+      parsed = JSON.parse(rawText);
+    } catch (err) {
+      console.error("Invalid JSON from Gemini:", err);
+      return null;
+    }
+
+    // Access values
+    alert(parsed["Class Label"]);
+    
+
         const data = await response.json();
 
         // 3. Process the results from the Gemini API
