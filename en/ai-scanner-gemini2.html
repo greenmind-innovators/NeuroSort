@@ -285,6 +285,10 @@ async function predict() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
+        // raw text returned from Gemini
+    const rawText = result.response.text();
+    console.log("Raw Gemini Output:", rawText);
+
         // try to parse JSON
     let parsed;
     try {
