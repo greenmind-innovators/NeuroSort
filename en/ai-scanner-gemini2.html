@@ -253,7 +253,7 @@ async function predict() {
         // const geminiPrompt = "Analyze this image. Classify it into one of these class label: 'Recyclable (Plastic / Paper / Metal / Glass)',  'Compost (Organic)', or 'Non-Recyclable (Trash)'. Also, provide a brief, friendly disposal instruction.";
         //const geminiPrompt = "Analyze this image. Classify it into one of these Class Label: 'Recyclable (Plastic / Paper / Metal / Glass/ Multiple)',  'Compost (Organic)', or 'Non-Recyclable (Trash)'. Also, provide a brief, friendly disposal instruction using class label: 'Disposal Instruction'. If it is 'Recyclable (Multiple)' provide brief sorting instruction as class label: 'Sorting Instruction'. Do not include asterik between class label.";
         
-        const PROMPT = `
+        const geminiPrompt = `
         Classify the image into:
             - Class Label: One of ['Recyclable (Plastic)', 'Recyclable (Paper)',
             'Recyclable (Metal)', 'Recyclable (Glass)', 'Recyclable (Multiple)',
