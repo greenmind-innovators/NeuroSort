@@ -1,7 +1,8 @@
 // sw.js - Service Worker for PWA
+
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open("pwa-v1").then((cache) => { // Cache essential assets
+    caches.open("pwa-v2").then((cache) => { // Cache essential assets
       return cache.addAll([
         "/",
         "/index.html",
