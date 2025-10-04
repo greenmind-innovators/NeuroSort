@@ -104,8 +104,8 @@
         trash: {
             type: "Trash",
             status: "Non-recyclable",
-            /* desc: "General waste consists of items that cannot be recycled. This includes contaminated packaging, used tissues, broken ceramics, and other non-recyclable materials. Disposing of them properly helps keep recyclable streams clean.",
-            instructions: "Place general trash in a sealed bag and put it into the designated black bin for non-recyclable waste. Do not mix with recyclables.", */
+            desc: "General waste consists of items that cannot be recycled. This includes contaminated packaging, used tissues, broken ceramics, and other non-recyclable materials. Disposing of them properly helps keep recyclable streams clean.",
+            instructions: "Place general trash in a sealed bag and put it into the designated black bin for non-recyclable waste. Do not mix with recyclables.", 
             bin: "Black Bin",
             color: "#232323",
             image: "../Images/trash-guide.png"
@@ -113,15 +113,17 @@
         organic: {
             type: "Organic",
             status: "Compost",
-            /* desc: "Organic waste is biodegradable material from food, plants, or natural sources that decomposes and can be reused as compost or bioenergy.",
-            instructions: "Dispose of organic waste in designated compost bins or green waste containers; avoid mixing with plastics or hazardous materials to enable safe composting or bioenergy recovery.", */
+            desc: "Organic waste is biodegradable material from food, plants, or natural sources that decomposes and can be reused as compost or bioenergy.",
+            instructions: "Dispose of organic waste in designated compost bins or green waste containers; avoid mixing with plastics or hazardous materials to enable safe composting or bioenergy recovery.", 
             bin: "Green Bin",
             color: "#28a745",
             image: "../Images/trash-guide.png"
         },
          ewaste: {
             type: "e-Waste",
-            status: "Recyclable",            
+            status: "Recyclable",    
+            desc: "E-waste refers to discarded electronics such as batteries, chargers, phones, computers, and light bulbs. These items often contain hazardous substances (lead, mercury, cadmium) that can pollute the environment and harm health if mixed with regular trash. At the same time, they hold valuable materials like copper, aluminum, and rare earth metals that can be recovered and recycled.",
+            instructions: "Do not throw e-waste in regular bins. Collect it separately and bring it to an e-waste recycling center, a certified collection point, or a retailer’s take-back program so hazardous parts are treated safely and useful materials can be recovered.",      
             bin: "Red Bin",
             color: "#FF0000",
             image: "../Images/trash-guide.png"
@@ -157,8 +159,13 @@
            document.querySelector(".item-img img").src = item.image;
            document.querySelector("h1").textContent = item.type;
            document.querySelector(".status-text").textContent = item.status;
-           document.querySelector("p").textContent = "";
-           document.querySelector("h2 + p").textContent = instructions;
+           if (instructions !== "") {
+                document.querySelector("p").textContent = item.desc;
+                document.querySelector("h2 + p").textContent = item.instructions;  
+           } else {
+            document.querySelector("p").textContent = "";
+            document.querySelector("h2 + p").textContent = instructions;
+            }
            document.getElementById("binLabel").textContent = item.bin;
            document.querySelector(".tag").style.backgroundColor = item.color; 
         }
