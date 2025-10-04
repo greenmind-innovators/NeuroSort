@@ -140,7 +140,7 @@
         const type = params.get("type");        
         const instructions = params.get("data");
 
-        if (type !== 'e-waste') 
+        if (type === 'e-waste') 
                 type = 'ewaste';
 
         if (type !== 'multiple' && type !== 'trash' && type !== 'organic' && type !== 'ewaste' && items[type]) {
