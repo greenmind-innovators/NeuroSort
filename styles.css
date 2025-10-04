@@ -10,7 +10,8 @@ body {
     font-family: 'Poppins';
     background-color: #f8fafc;
     height: 100vh;
-    padding: 20px;
+    /* padding: 20px;  */
+    margin: auto;
 }
 
 /* -----------------------------------Start of styling for index.html----------------------------------- */
@@ -236,6 +237,9 @@ body {
 /* -----------------------------------Start of styling for application.html----------------------------------- */
 .main-content {
     margin-top: 60px;
+    min-height: 100vh;        /* ensure content fills screen */
+    padding-bottom: 74px;     /* prevent footer overlap (54px height + padding) */
+    padding: 20px; 
 }
 
 .features {
