@@ -119,6 +119,13 @@
             color: "#28a745",
             image: "../Images/trash-guide.png"
         },
+         ewaste: {
+            type: "e-Waste",
+            status: "Recyclable",            
+            bin: "Red Bin",
+            color: "#FF0000",
+            image: "../Images/trash-guide.png"
+        },
          multiple: {
             type: "Multiple",
             status: "Recyclable",            
@@ -133,7 +140,10 @@
         const type = params.get("type");        
         const instructions = params.get("data");
 
-        if (type !== 'multiple' && type !== 'trash' && type !== 'organic' && items[type]) {
+        if (type !== 'e-waste') 
+                type = 'ewaste';
+
+        if (type !== 'multiple' && type !== 'trash' && type !== 'organic' && type !== 'ewaste' && items[type]) {
             const item = items[type];
             document.querySelector(".item-img img").src = item.image;
             document.querySelector("h1").textContent = item.type;
@@ -141,7 +151,7 @@
             document.querySelector("p").textContent = item.desc;
             document.querySelector("h2 + p").textContent = instructions + item.instructions;            
             document.getElementById("binLabel").textContent = item.bin;
-            document.querySelector(".tag").style.backgroundColor = item.color;
+            document.querySelector(".tag").style.backgroundColor = item.color;    
         } else {
            const item = items[type];
            document.querySelector(".item-img img").src = item.image;
