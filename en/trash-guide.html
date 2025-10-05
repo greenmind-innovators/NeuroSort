@@ -163,7 +163,7 @@
            document.querySelector(".item-img img").src = item.image;
            document.querySelector("h1").textContent = item.type;
            document.querySelector(".status-text").textContent = item.status;
-           if (instructions !== "") {
+           if (instructions !== "" || instructions !== null) {
                 document.querySelector("p").textContent = item.desc;
                 document.querySelector("h2 + p").textContent = item.instructions;  
            } else {
