@@ -46,7 +46,7 @@
         <div class="upload-container">
             <h1 class="upload-title">Upload Image</h1>
             <p class="upload-subtitle">Select your image file here</p>
-            <div class="upload-hint">Supports JPG, PNG, HEIC</div>
+            <div class="upload-hint">Supports JPG, PNG, HEIC (5 MB max)</div>
 
             <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
                 Add Image
@@ -84,7 +84,15 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     const fileSizeElement = document.getElementById('fileSize');
     const previewImage = document.getElementById('previewImage');
     const fileInfoDiv = document.getElementById('fileInfo');
+    const maxSizeMB = 5;
+    const maxSizeBytes = maxSizeMB * 1024 * 1024;
 
+    if (file.size > maxSizeBytes) {
+        alert(`File size exceeds ${maxSizeMB} MB. Please choose a smaller file.`);
+        this.value = ''; // Clear the input
+        return;
+    }
+    
     if (file) {
         fileNameElement.textContent = `File: ${file.name}`;
         fileSizeElement.textContent = `Size: ${(file.size / 1024 / 1024).toFixed(2)} MB`;
